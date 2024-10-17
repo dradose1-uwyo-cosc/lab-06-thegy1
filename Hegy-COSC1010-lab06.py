@@ -82,11 +82,11 @@ print(len(random_string)) # Print out the size for reference
 #Will need to first declare a dictionary 
 letter_counts={}
 # Output: each letter and its corresponding occurrence in alphabetical order
-for char in random_string:
-        if char not in letter_counts: 
-            letter_counts[char]=1
-        elif char in letter_counts:
-            letter_counts[char]+=1
+for letter in random_string:
+        if letter not in letter_counts: 
+            letter_counts[letter]=1
+        elif letter in letter_counts:
+            letter_counts[letter]+=1
 for key in sorted(letter_counts.keys()):
     print (f"{key} occurred {letter_counts[key]} times")
 print("*"*75)
