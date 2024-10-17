@@ -102,6 +102,8 @@ for key,value in sorted (letter_counts.items()):
     elif value < lowest_count:
         lowest_count = value
         least_occurred = key
+    else:
+        continue
 
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
