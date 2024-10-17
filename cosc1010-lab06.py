@@ -80,13 +80,14 @@ print(len(random_string)) # Print out the size for reference
 
 #Load all the elements into a dictionary
 #Will need to first declare a dictionary 
-letter_counts={'a':0,'b':0,'c':0,'d':0,'e':0,'f':0,'g':0,'h':0,'i':0,'j':0,'k':0,'l':0,'m':0,'n':0,'o':0,'p':0,'q':0,'r':0,'s':0,'t':0,'u':0,'v':0,'w':0,'x':0,'y':0,'z':0}
+letter_counts={}
 # Output: each letter and its corresponding occurrence in alphabetical order
 for char in random_string:
-    for key in letter_counts.keys():
-        if char == key:
-            letter_counts[key]+=1
-for key in letter_counts.keys():
+        if char not in letter_counts: 
+            letter_counts[char]=1
+        elif char in letter_counts:
+            letter_counts[char]+=1
+for key in sorted(letter_counts.keys()):
     print (f"{key} occurred {letter_counts[key]} times")
 print("*"*75)
 # Output which letter occurred the most 
@@ -110,8 +111,7 @@ print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
 percentage={}
-for key,value in sorted(letter_counts.items()):
+for key,value in letter_counts.items():
     percentage[key]= (value/len(random_string))*100
 for key in sorted(percentage.keys()):
     print(f"{key} made up {percentage[key]} percent of the string")
-# Output what the percentage of the string each character is, again in alphabetical
