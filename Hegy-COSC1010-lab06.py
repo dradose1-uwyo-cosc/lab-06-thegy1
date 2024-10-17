@@ -95,7 +95,7 @@ most_occurred = ""
 least_occurred = ""
 highest_count=0
 lowest_count=1_000 
-for key,value in sorted (letter_counts.items()):
+for key,value in letter_counts.items():
     if value > highest_count:
         highest_count = value
         most_occurred = key
@@ -117,3 +117,4 @@ for key,value in letter_counts.items():
     percentage[key]= (value/len(random_string))*100
 for key in sorted(percentage.keys()):
     print(f"{key} made up {percentage[key]} percent of the string")
+
